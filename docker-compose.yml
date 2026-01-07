@@ -1,14 +1,28 @@
 services:
+  git-loader:
+    image: alpine/git
+    container_name: my_git_loader
+    volumes:
+      - app_code:/app
+    # Cleans directory, Clones recursively, then exits
+    command: >
+      sh -c "rm -rf /app/* && git clone --recursive https://github.com/XuanShine/HotelServer.git /app 
+      && echo 'Clone finished' "
   app:
     build: .
     ports:
       - "8301:8301"
     volumes:
       - server_data:/app/databases
+      - app_code:/var/www/html
     environment:
       - DATABASE_URL=sqlite://storage.db
       - DATABASE_FOLDER=/app/databases
     command: python -m py4web run apps --host 0.0.0.0 --port 8301
+    depends_on:
+      git-loader:
+        condition: service_completed_successfully # Wait for clone to finish
   
 volumes:
   server_data:
+  app_code:
