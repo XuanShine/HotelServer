@@ -1,0 +1,14 @@
+services:
+  app:
+    build: .
+    ports:
+      - "8000:8000"
+    volumes:
+      - server_data:/app/databases
+    environment:
+      - DATABASE_URL=sqlite://storage.db
+      - DATABASE_FOLDER=/app/databases
+    command: uv run py4web run apps --host 0.0.0.0 --port 8000
+  
+volumes:
+  server_data:
