@@ -10,3 +10,6 @@
 [submodule "reservationFlet"]
 	path = reservationFlet
 	url = https://github.com/XuanShine/reservationFlet
+[submodule "checkinFlet"]
+	path = checkinFlet
+	url = https://github.com/XuanShine/checkinFlet
