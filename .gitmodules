@@ -1,0 +1,9 @@
+[submodule "apps/HotelRates"]
+	path = apps/HotelRates
+	url = https://github.com/XuanShine/HotelRates
+[submodule "apps/wubook"]
+	path = apps/wubook
+	url = https://github.com/XuanShine/wubook
+[submodule "apps/signCheckIn"]
+	path = apps/signCheckIn
+	url = https://github.com/XuanShine/signCheckIn
