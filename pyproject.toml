@@ -1,0 +1,10 @@
+[project]
+name = "hotelserver"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.14"
+dependencies = [
+    "loguru>=0.7.3",
+    "py4web>=1.20251212.1",
+]
