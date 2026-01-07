@@ -4,10 +4,11 @@ services:
     container_name: my_git_loader
     volumes:
       - app_code:/app
+    entrypoint: ["sh", "-c"]
     # Cleans directory, Clones recursively, then exits
     command: >
-      sh -c "rm -rf /app/* && git clone --recursive https://github.com/XuanShine/HotelServer.git /app 
-      && echo 'Clone finished' "
+      rm -rf /app/* && git clone --recursive https://github.com/XuanShine/HotelServer.git /app 
+      && echo 'Clone finished'
   app:
     build: .
     ports:
