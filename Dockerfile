@@ -31,7 +31,7 @@ RUN uv sync --no-install-project
 COPY . .
 
 # 7. Final sync to install the project itself
-RUN uv sync
+# RUN uv sync
 
 # 8. Place the virtual environment in the PATH
 ENV PATH="/app/.venv/bin:$PATH"
@@ -40,5 +40,4 @@ ENV PATH="/app/.venv/bin:$PATH"
 EXPOSE 8000
 
 # Run py4web server
-# CMD ["py4web", "run", "apps", "--host", "0.0.0.0", "--port", "8000"]
-CMD ["uv", "run", "py4web", "run", "apps", "--host", "0.0.0.0", "--port", "8000"]
+CMD ["python", "-m", "py4web", "run", "apps", "--host", "0.0.0.0", "--port", "8000"]
