@@ -37,7 +37,7 @@ COPY . .
 ENV PATH="/app/.venv/bin:$PATH"
 
 # Expose port
-EXPOSE 8000
+EXPOSE 8301
 
 # Run py4web server
-CMD ["python", "-m", "py4web", "run", "apps", "--host", "0.0.0.0", "--port", "8000"]
+CMD ["python", "-m", "py4web", "run", "apps", "--host", "0.0.0.0", "--port", "8301"]
