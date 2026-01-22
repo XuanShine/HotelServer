@@ -24,6 +24,7 @@ dependencies = [
     "python-dotenv>=1.2.1",
     "flet[all]>=0.80.1",
     "pytest",
+    "ansi2html>=1.9.2",
 ]
 
 [tool.hatch.build.targets.wheel]
@@ -34,6 +35,7 @@ ignore = ["E712", "F401"]
 
 [dependency-groups]
 dev = [
+    "ipython>=9.9.0",
     "pytest-asyncio>=1.3.0",
     "pytest-mock>=3.15.1",
     "respx>=0.22.0",
