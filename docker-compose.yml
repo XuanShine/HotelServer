@@ -1,5 +1,5 @@
 services:
-  app:
+  webserver:
     build: .
     ports:
       - "8301:8301"
@@ -10,7 +10,20 @@ services:
       - DATABASE_URL=sqlite://storage.db
       - DATABASE_FOLDER=/app/databases
       - HOTELRATES_LOG_FOLDER=/app/apps/HotelRates/logs
+      - LOG_LEVEL=INFO
+      - ENVIRONEMENT=dev
     command: python -m py4web run apps --host 0.0.0.0 --port 8301
+
+  checkinflet:
+    build: checkinFlet/
+    ports:
+      - "8302:8302"
+    environment:
+      - BASE_API_URL_DEV=http://localhost:8301
+      - BASE_API_URL_PROD=http://10.0.0.2:8301
+      - LOG_LEVEL=INFO
+      - ENVIRONEMENT=dev
+    command: uv run flet run --web --host 0.0.0.0 --port 8302
     
 volumes:
   server_data:

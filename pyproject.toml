@@ -31,7 +31,7 @@ dependencies = [
 only-include = ["main.py", "apps/**", "password.txt", "README.md"]
 
 [tool.ruff.lint]
-ignore = ["E712", "F401"]
+ignore = ["E712", "F401", "E401"]
 
 [dependency-groups]
 dev = [
