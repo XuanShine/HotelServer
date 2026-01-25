@@ -13,6 +13,6 @@
 [submodule "checkinFlet"]
 	path = checkinFlet
 	url = https://github.com/XuanShine/checkinFlet
-[submodule "apps/stancer"]
-	path = apps/stancer
-	url = https://github.com/XuanShine/stancer.git
+[submodule "apps/stancerhotel"]
+	path = apps/stancerhotel
+	url = https://github.com/XuanShine/stancerhotel.git
