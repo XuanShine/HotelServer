@@ -37,7 +37,7 @@ services:
       - ENVIRONMENT=prod
       - TZ=Europe/Paris
     working_dir: /app/src
-    command: uv run uvicorn main:app --host 0.0.0.0 --port 8000 --interface asgi3 --ws auto
+    command: uv run uvicorn main:app --host 0.0.0.0 --port 8000 --interface asgi3 --ws auto --timeout-keep-alive 65 --ws-ping-interval 20
     
 volumes:
   server_data:
