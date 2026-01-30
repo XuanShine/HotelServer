@@ -31,7 +31,8 @@ services:
   reservationflet:
     build: reservationFlet/
     ports:
-      - "8300:443"
+      # - "8300:443"
+      - "8300:8000"
     environment:
       - LOG_LEVEL=INFO
       - ENVIRONMENT=prod
