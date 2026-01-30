@@ -26,6 +26,18 @@ services:
       - ENVIRONMENT=dev
       - TZ=Europe/Paris
     command: uv run flet run --web --host 0.0.0.0 --port 8302
+  
+
+  reservationflet:
+    build: reservationFlet/
+    ports:
+      - "8303:8303"
+    environment:
+      - LOG_LEVEL=INFO
+      - ENVIRONMENT=prod
+      - TZ=Europe/Paris
+    working_dir: /app/src
+    command: uv run uvicorn main:app --host 0.0.0.0 --port 8303
     
 volumes:
   server_data:
